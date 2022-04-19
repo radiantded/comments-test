@@ -15,6 +15,7 @@ source venv/Scripts/activate (для Windows)
 ```
 3. Создайте файл .env со следующими переменными окружения:
 ```
+SECRET_KEY = '{ключ Django}'
 DB_ENGINE = 'django.db.backends.postgresql'
 DB_NAME = '{имя БД}'
 PG_USER = '{пользователь}'
