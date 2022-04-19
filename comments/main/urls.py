@@ -1,8 +1,8 @@
-from django.db import router
-from django.urls import path, include
-from .views import PostsView, CommentView
-from .routers import router_v1
+from django.urls import include, path
 from rest_framework_swagger.views import get_swagger_view
+
+from .routers import router_v1
+from .views import CommentView, PostsView
 
 
 schema = get_swagger_view('Comments API')
@@ -17,7 +17,6 @@ router_v1.register(
     CommentView,
     basename='comments'
 )
-
 
 urlpatterns = [
     path('api/v1/', include(router_v1.urls)),

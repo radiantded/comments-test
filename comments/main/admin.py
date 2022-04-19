@@ -6,17 +6,17 @@ admin.register(Post)
 admin.register(Comment)
 
 
-# @admin.register(Post)
-# class PostAdmin(admin.ModelAdmin):
-#     list_display = ('post',)
-#     search_fields = ('post',)
-#     list_filter = ('post',)
-#     empty_value_display = '-empty-'
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'post',)
+    search_fields = ('id', 'post',)
+    list_filter = ('post',)
+    empty_value_display = '-пусто-'
 
 
-# @admin.register(Comment)
-# class CommentAdmin(admin.ModelAdmin):
-#     list_display = ('comment_text', 'post',)
-#     search_fields = ('comment_text',  'post',)
-#     list_filter = ('comment_text',  'post',)
-#     empty_value_display = '-empty-'
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'post',)
+    search_fields = ('id', 'parent', 'text',  'post',)
+    list_filter = ('parent', 'text',  'post',)
+    empty_value_display = '-пусто-'
